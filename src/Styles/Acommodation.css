@@ -1,0 +1,127 @@
+.accommodation-page {
+  margin-top: 88px;
+  padding:20px;
+  background-color: #f5f5f5;
+  width: 1470px;
+}
+
+.accommodation-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.accommodation-header h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 15px;
+}
+
+.accommodation-header p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rooms-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.room-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.room-image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.room-card:hover .room-image img {
+  transform: scale(1.05);
+}
+
+.room-price {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(164, 150, 204, 0.9);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.room-content {
+  padding: 25px;
+}
+
+.room-content h2 {
+  font-size: 1.8rem;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.room-description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.room-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.feature-tag {
+  background: #e9e7e7;
+  color: #2d3748;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 12px;
+  background: #3b0eb9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #2d0a8f;
+}
+
+
+
