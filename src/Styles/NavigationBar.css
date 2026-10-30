@@ -1,87 +1,355 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rpm;
-  background-color: rgb(237, 232, 232);
-  box-shadow: 0px 2px 6px rgba(108, 45, 209, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 88px;
-  z-index: 1000;
+
+/* =========================================
+   GLOBAL SETTINGS
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  font-size: 50px;
-  font-weight: bold;
-  color: #060707;
-  padding: 35px;
+.navbar {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #fffaf0
+  );
+
+  box-shadow: 0 4px 20px rgba(65, 39, 15, 0.12);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  border-bottom: 2px solid #d5a34b;
 }
+
+/* =========================================
+   LOGO DESIGN
+========================================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 165px;
+  height: 82px;
+
+  object-fit: contain;
+  object-position: center;
+
+  display: block;
+
+  transition: transform 0.4s ease,
+              filter 0.4s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 4px 5px rgba(160, 105, 35, 0.2));
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .nav-links {
   display: flex;
-  gap: 25px;
-  padding: 0 2rem;
-  font-family: 'Times New Roman', Times, serif;
+  align-items: center;
+  gap: 32px;
 }
 
-.nav-links a {
+.nav-links > a:not(.book-btn) {
+  position: relative;
   text-decoration: none;
-  color: #020305;
-  font-size: 22px;
+
+  color: #392817;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  padding: 12px 0;
+
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #cacdd4;
+/* Underline Animation */
+
+.nav-links > a:not(.book-btn)::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+
+  width: 0;
+  height: 2px;
+
+  background: #c28b36;
+
+  transition: width 0.35s ease;
 }
 
-/* Dropdown Container */
+.nav-links > a:not(.book-btn):hover {
+  color: #b47a27;
+}
+
+.nav-links > a:not(.book-btn):hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   FACILITIES DROPDOWN
+========================================= */
+
 .dropdown {
   position: relative;
-
+  padding: 12px 0;
 }
 
-/* Dropdown Button - match .nav-links a styling */
 .dropbtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #392817;
+
+  font-size: 16px;
+  font-weight: 600;
+
   cursor: pointer;
-  text-decoration: none;
-  color: #020305;
-  font-size: 22px;
-  font-family: inherit;
-  background: none;
-  border: none;
-  padding: 0;
+
+  transition: color 0.3s ease;
 }
 
-.nav-links .dropdown:hover .dropbtn {
-  color: #cbcfd8;
+.dropbtn span {
+  font-size: 12px;
+  transition: transform 0.3s ease;
 }
 
-/* Dropdown Content (hidden by default) */
+.dropdown:hover .dropbtn,
+.dropdown:focus-within .dropbtn {
+  color: #b47a27;
+}
+
+.dropdown:hover .dropbtn span,
+.dropdown:focus-within .dropbtn span {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Box */
+
 .dropdown-content {
-  display: none;
   position: absolute;
-  background-color: rgb(250, 243, 243);
-  min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  top: calc(100% + 8px);
+  left: -20px;
+
+  min-width: 220px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+  border-top: 3px solid #c28b36;
+
+  box-shadow: 0 12px 30px rgba(45, 29, 12, 0.16);
+
+  padding: 9px 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+
+  transition: all 0.3s ease;
 }
 
-/* Dropdown links */
+/* Dropdown Open Effect */
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Links */
+
 .dropdown-content a {
   display: block;
-  padding: 12px 16px;
+
+  padding: 13px 22px;
+
   text-decoration: none;
-  color: black;
+
+  color: #49341f;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
 }
 
 .dropdown-content a:hover {
-  background-color: #c7a8a8;
+  background: #fff6e8;
+  color: #b47a27;
+  padding-left: 30px;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
+/* =========================================
+   BOOK NOW BUTTON
+========================================= */
+
+.nav-links .book-btn {
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 27px;
+
+  background: linear-gradient(
+    135deg,
+    #d5a34b,
+    #a96e20
+  );
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 5px 12px rgba(169, 110, 32, 0.25);
+
+  transition: all 0.35s ease;
+}
+
+.nav-links .book-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #a96e20,
+    #805016
+  );
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(169, 110, 32, 0.35);
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 10px 3%;
+  }
+
+  .logo img {
+    width: 135px;
+    height: 75px;
+  }
+
+  .nav-links {
+    gap: 19px;
+  }
+
+  .nav-links > a:not(.book-btn),
+  .dropbtn {
+    font-size: 14px;
+  }
+
+  .nav-links .book-btn {
+    padding: 12px 19px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    padding: 12px 15px;
+    gap: 12px;
+  }
+
+  .logo img {
+    width: 145px;
+    height: 70px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .nav-links > a:not(.book-btn),
+  .dropbtn {
+    font-size: 13px;
+  }
+
+  .nav-links .book-btn {
+    padding: 10px 17px;
+    font-size: 13px;
+  }
+
+  .dropdown-content {
+    left: 50%;
+    transform: translate(-50%, 12px);
+    min-width: 190px;
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links > a:not(.book-btn),
+  .dropbtn {
+    font-size: 12px;
+  }
+
+  .logo img {
+    width: 125px;
+    height: 65px;
+  }
 }

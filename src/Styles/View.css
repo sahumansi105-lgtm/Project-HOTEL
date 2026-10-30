@@ -1,0 +1,335 @@
+/* =====================================
+   VIEWS PAGE - HOTEL PARADISE
+===================================== */
+
+.views-page {
+  width: 100%;
+  overflow: hidden;
+  background: #fffaf2;
+  color: #392719;
+  font-family: "Poppins", Arial, sans-serif;
+
+  --view-gold: #d5a34b;
+  --view-dark-gold: #a8792d;
+  --view-brown: #392719;
+}
+
+/* HERO SECTION */
+
+.views-hero {
+  min-height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 7%;
+  position: relative;
+
+  background:
+    linear-gradient(
+      rgba(31, 21, 13, 0.62),
+      rgba(31, 21, 13, 0.76)
+    ),
+    url("/img03.jpg") center/cover no-repeat;
+}
+
+.views-hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(213, 163, 75, 0.7);
+  pointer-events: none;
+}
+
+.views-hero-content {
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.views-hero-content > span {
+  color: #e8c98f;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.views-hero h1 {
+  color: white;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 6vw, 70px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 25px 0;
+}
+
+.views-divider {
+  width: 85px;
+  height: 3px;
+  background: var(--view-gold);
+  margin: 0 auto 25px;
+}
+
+.views-hero p {
+  color: #f5ead8;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.views-hero-btn,
+.views-banner-btn {
+  display: inline-block;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #e6c17b, #c18b37);
+  color: #302116;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.views-hero-btn:hover,
+.views-banner-btn:hover {
+  background: #fffaf2;
+  transform: translateY(-4px);
+}
+
+/* INTRODUCTION */
+
+.views-intro {
+  max-width: 900px;
+  margin: auto;
+  padding: 90px 25px 65px;
+  text-align: center;
+}
+
+.views-intro > span,
+.views-gallery-heading > span {
+  color: var(--view-dark-gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.views-intro h2,
+.views-gallery-heading h2 {
+  color: var(--view-brown);
+  font-family: Georgia, serif;
+  font-size: clamp(31px, 4vw, 44px);
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.views-intro p {
+  color: #786650;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* GALLERY SECTION */
+
+.views-gallery-section {
+  padding: 30px 6% 100px;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.views-gallery-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.views-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.view-card {
+  min-width: 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #eadcc5;
+  box-shadow: 0 10px 30px rgba(57, 39, 25, 0.08);
+}
+
+.view-card-image {
+  height: 370px;
+  position: relative;
+  overflow: hidden;
+}
+
+.view-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.view-card:hover .view-card-image img {
+  transform: scale(1.09);
+}
+
+.view-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 35px;
+  background: linear-gradient(
+    transparent 25%,
+    rgba(25, 17, 11, 0.88)
+  );
+  color: white;
+  opacity: 0.95;
+  transition: background 0.4s ease;
+}
+
+.view-overlay > span {
+  color: #e8c98f;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.view-overlay h3 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+.view-overlay p {
+  color: #f4eadd;
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 450px;
+}
+
+/* BOTTOM BANNER */
+
+.views-banner {
+  padding: 90px 20px;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(35, 23, 14, 0.84),
+      rgba(35, 23, 14, 0.84)
+    ),
+    url("/img04.jpg") center/cover no-repeat;
+}
+
+.views-banner-content {
+  max-width: 850px;
+  margin: auto;
+}
+
+.views-banner-content > span {
+  color: #e8c98f;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.views-banner h2 {
+  color: white;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 22px 0;
+}
+
+.views-banner p {
+  color: #f1e6d5;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+  .views-gallery {
+    gap: 20px;
+  }
+
+  .view-card-image {
+    height: 300px;
+  }
+
+  .view-overlay {
+    padding: 22px;
+  }
+
+  .view-overlay h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .views-hero {
+    min-height: 460px;
+    padding: 65px 25px;
+  }
+
+  .views-hero::before {
+    inset: 10px;
+  }
+
+  .views-hero-content > span {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .views-hero p {
+    font-size: 14px;
+  }
+
+  .views-intro {
+    padding: 65px 22px 45px;
+  }
+
+  .views-intro p {
+    font-size: 14px;
+  }
+
+  .views-gallery-section {
+    padding: 20px 18px 65px;
+  }
+
+  .views-gallery-heading {
+    margin-bottom: 30px;
+  }
+
+  .views-gallery {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .view-card-image {
+    height: 300px;
+  }
+
+  .view-overlay {
+    padding: 25px;
+  }
+
+  .view-overlay h3 {
+    font-size: 25px;
+  }
+
+  .views-banner {
+    padding: 70px 22px;
+  }
+
+  .views-banner p {
+    font-size: 14px;
+  }
+}

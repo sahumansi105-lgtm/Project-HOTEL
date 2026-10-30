@@ -1,92 +1,127 @@
-import React from "react"
+import React from "react";
+import "../Styles/Activities.css";
 
 function Activities() {
-  
-  const styles = {
-    container: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      padding: "50px 80px",
-      gap: "40px",
-      flexWrap: "wrap",
+  const activities = [
+    {
+      id: 1,
+      title: "Camel Ride",
+      image: "/camel ride.jpg",
+      category: "Desert Experience",
+      description:
+        "Experience the timeless charm of the Thar Desert with a peaceful camel ride. Enjoy breathtaking sunset views and discover the beauty of Jaisalmer's golden dunes.",
     },
-    image: {
-      width: "100%",
-      maxWidth: "550px",
-      borderRadius: "12px",
-      objectFit: "cover",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
+    {
+      id: 2,
+      title: "Jeep Adventure",
+      image: "/jeep.jpg",
+      category: "Adventure",
+      description:
+        "Feel the thrill of an exciting jeep safari across the golden sand dunes. Explore the desert landscape and create unforgettable memories.",
     },
-    textSection: {
-      maxWidth: "480px",
+    {
+      id: 3,
+      title: "Cultural Dance Nights",
+      image: "/dance.jpg",
+      category: "Rajasthani Culture",
+      description:
+        "Enjoy the vibrant culture of Rajasthan with traditional folk performances, lively music and colourful dance under the beautiful desert sky.",
     },
-    heading: {
-      fontSize: "36px",
-      color: "#cfa35a",
-      marginBottom: "15px",
-    },
-    paragraph: {
-      fontSize: "18px",
-      lineHeight: "1.6",
-      color: "#f1eaeaff",
-      
-    }
-  };
+  ];
 
   return (
-    <div>
-    <div style={styles.container}>
+    <div className="activities-page">
 
-      <div style={styles.image}
-      />
+      {/* HERO SECTION */}
+      <section className="activities-hero">
+        <div className="activities-hero-content">
+          <span className="activities-subtitle">
+            DISCOVER THE MAGIC OF RAJASTHAN
+          </span>
 
-      <div style={styles.textSection}>
-        <h2 style={styles.heading}>Activities</h2>
-        <p style={styles.paragraph}>
-          Enjoy memorable experiences at our hotel — Desert Safari, Camel Ride,Jeep Adventure, Cultural Dance Nights, and many more activities that
-          bring the vibrant spirit of Jaisalmer to life.
+          <h1>Experiences Beyond Ordinary</h1>
+
+          <div className="activities-divider"></div>
+
+          <p>
+            Adventure, culture and unforgettable moments await you
+            at Hotel Paradise, Jaisalmer.
+          </p>
+
+          <a href="#activities-list" className="activities-hero-btn">
+            Explore Activities
+          </a>
+        </div>
+      </section>
+
+      {/* INTRODUCTION */}
+      <section className="activities-intro">
+        <span>MAKE EVERY MOMENT SPECIAL</span>
+
+        <h2>Discover Experiences to Remember</h2>
+
+        <p>
+          From exciting desert adventures to traditional Rajasthani
+          celebrations, experience the spirit of Jaisalmer through
+          activities that make your stay truly memorable.
         </p>
-      </div>
-    </div>
+      </section>
 
-      <div style={styles.container}>
-        <img src="/camel ride.jpg" style={styles.image} alt="Camel Ride" />
-        <div style={styles.textSection}>
-          <h2 style={styles.heading}>Camel Ride</h2>
-          <p style={styles.paragraph}>
-            Experience the traditional camel ride during sunset and explore the
-            calm and beauty of the Thar Desert.
-          </p>
-        </div>
-      </div>
+      {/* ACTIVITIES CARDS */}
+      <section className="activities-list" id="activities-list">
 
-        <div style={styles.container}>
-        <img src="/jeep.jpg" style={styles.image} alt="Camel Ride" />
-        <div style={styles.textSection}>
-          <h2 style={styles.heading}>Jeep Adventure</h2>
-          <p style={styles.paragraph}>
-            Experience the traditional camel ride during sunset and explore the
-            calm and beauty of the Thar Desert.
-          </p>
-        </div>
-      </div>
+        {activities.map((activity, index) => (
+          <article
+            className={`activity-card ${index % 2 !== 0 ? "reverse" : ""}`}
+            key={activity.id}
+          >
+            <div className="activity-image">
+              <img src={activity.image} alt={activity.title} />
+              <span className="activity-number">
+                0{activity.id}
+              </span>
+            </div>
 
-            <div style={styles.container}>
-        <img src="/dance.jpg" style={styles.image} alt="Camel Ride" />
-        <div style={styles.textSection}>
-          <h2 style={styles.heading}>Cultural Dance Nights</h2>
-          <p style={styles.paragraph}>
-            Experience the traditional camel ride during sunset and explore the
-            calm and beauty of the Thar Desert.
+            <div className="activity-content">
+              <span className="activity-category">
+                {activity.category}
+              </span>
+
+              <h2>{activity.title}</h2>
+
+              <div className="activity-line"></div>
+
+              <p>{activity.description}</p>
+
+              <a href="/contact" className="activity-btn">
+                Enquire Now <span>→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+
+      </section>
+
+      {/* BOTTOM BANNER */}
+      <section className="activities-banner">
+        <div className="activities-banner-content">
+          <span>YOUR JOURNEY STARTS HERE</span>
+
+          <h2>Create Memories That Last Forever</h2>
+
+          <p>
+            Make your Jaisalmer visit special with exciting adventures
+            and authentic Rajasthani experiences.
           </p>
+
+          <a href="/booking" className="activities-banner-btn">
+            Book Your Stay
+          </a>
         </div>
-      </div>
-    
+      </section>
 
     </div>
   );
 }
 
 export default Activities;
-

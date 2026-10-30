@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 import "../Styles/Contact.css";
 
   const Contact = () => {
-  const [Name, setName] = useState();
-    const [Email, setEmail] = useState();
-    const [PhoneNumber, setPhoneNumber] = useState();
-    const [Message, setMessage] = useState();
+const [Name, setName] = useState("");
+const [Email, setEmail] = useState("");
+const [PhoneNumber, setPhoneNumber] = useState("");
+const [Message, setMessage] = useState("");
     console.log(Name)
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
+const handleSubmit = (event) => {
+  event.preventDefault();
 
-      if (Name && Email && PhoneNumber && Message) {
-          alert("Successfully submitted!")
-        }else{
-          alert("All fields are mandatory!")
-        }
-      };
+  if (Name && Email && PhoneNumber && Message) {
+    alert("Successfully submitted!");
+
+    window.location.reload();
+  } else {
+    alert("All fields are mandatory!");
+  }
+};
 
   return (
       <div className='contact-page'>
@@ -46,37 +48,63 @@ import "../Styles/Contact.css";
             <p>info@Paradisehotel.com</p>
           </div>
           
-          <form onSubmit={handleSubmit}>
-        <p className='heading'>Get in touch</p>
-        <div>
-          <p className='fieldName'>Name*</p>
-          <input type='Name'  onChange={(event)=>setName(event.target.value)} />
-          <p className={Name? "data" : "noData"}>{Name? "" : "Name is required"}</p> 
-        </div>
+          
+<form onSubmit={handleSubmit}>
 
-        <div>
-          <p className='fieldName'>Email*</p>
-          <input type='Email' onChange={(event)=>setEmail(event.target.value)} />
-          <p className={Email? "data" : "noData"}>{Email? "" : "Email is required"}</p>
-        </div>
+  <p className="heading">Get in touch</p>
 
-        <div>
-        <p className='fieldName'>Phone Number*</p>
-        <input type='Phone Number' onChange={(event)=>setPhoneNumber(event.target.value)} />
-        <p className={PhoneNumber? "data" : "noData"}>{PhoneNumber? "" : "Phone Number is required"}</p>
-        </div>
+  <div>
+    <p className="fieldName">Name*</p>
+    <input
+      type="text"
+      placeholder="Enter your full name"
+      value={Name || ""}
+      onChange={(event) => setName(event.target.value)}
+      required
+    />
+  </div>
 
-        <div>
-        <p className='fieldName'>Message*</p>
-        <input type='Message' onChange={(event)=>setMessage(event.target.value)} />
-        <p className={Message? "data" : "noData"}>{Message? "" : "Message is required"}</p>
-        </div>
+  <div>
+    <p className="fieldName">Email*</p>
+    <input
+      type="email"
+      placeholder="Enter your email"
+      value={Email || ""}
+      onChange={(event) => setEmail(event.target.value)}
+      required
+    />
+  </div>
+
+  <div>
+    <p className="fieldName">Phone Number*</p>
+    <input
+      type="tel"
+      placeholder="Enter your phone number"
+      value={PhoneNumber || ""}
+      onChange={(event) => setPhoneNumber(event.target.value)}
+      required
+    />
+  </div>
+
+  <div>
+    <p className="fieldName">Message*</p>
+    <textarea
+      rows="5"
+      placeholder="Write your message..."
+      value={Message || ""}
+      onChange={(event) => setMessage(event.target.value)}
+      required
+    />
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+
+</form>
+
         
-        <div>
-          <button>Submit</button>
-        
-        </div>
-          </form>
+  
         </div>
     </div>
 

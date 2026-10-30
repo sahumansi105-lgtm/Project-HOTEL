@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Styles/Acommodation.css"
+import { Link } from "react-router-dom";
 
 function Acommodation() {
   const rooms = [
@@ -32,14 +33,6 @@ function Acommodation() {
       type: "🏰 Maharaja Suite",
       image: "/room04.jpg",
       description: "Experience the grandeur of Rajasthan in the Maharaja Suite, with hand-carved interiors and royal elegance overlooking the golden landscapes of Jaisalmer..",
-      price: "₹12,000",
-      features: ["Private Garden", "Jacuzzi", "Kitchen", "Free WiFi", "AC", "Premium Amenities"]
-    },
-        {
-      id: 5,
-      type: "👑 Maharani Suite",
-      image: "/room05.jpg",
-      description: "A luxurious retreat with rich textiles and traditional décor, perfect for couples seeking a serene and regal stay..",
       price: "₹12,000",
       features: ["Private Garden", "Jacuzzi", "Kitchen", "Free WiFi", "AC", "Premium Amenities"]
     },
@@ -99,7 +92,9 @@ function Acommodation() {
                   <span key={index} className="feature-tag">{feature}</span>
                 ))}
               </div>
-              <button className="book-btn">Book Now</button>
+              <Link to="/booking" className="book-btn">
+                Book Now
+              </Link>
             </div>
           </div>
         ))}

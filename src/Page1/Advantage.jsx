@@ -1,81 +1,121 @@
-import React from "react"
+import React from "react";
+import "../Styles/Advantage.css";
 
 function Advantage() {
-  
-  const styles = {
-    container: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      padding: "50px 80px",
-      gap: "40px",
-      flexWrap: "wrap",
+  const advantages = [
+    {
+      id: 1,
+      title: "Heritage & Royal Architecture",
+      image: "/a01.jpg",
+      category: "A Royal Experience",
+      description:
+        "Discover the timeless beauty of Jaisalmer through traditional architecture, golden sandstone surroundings and the charm of Rajasthan's rich heritage.",
     },
-    image: {
-      width: "100%",
-      maxWidth: "550px",
-      borderRadius: "12px",
-      objectFit: "cover",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
+    {
+      id: 2,
+      title: "Rooftop Views of Jaisalmer Fort",
+      image: "/a02.jpg",
+      category: "Unforgettable Views",
+      description:
+        "Enjoy beautiful views of the magnificent Jaisalmer Fort from the rooftop. Experience the golden city from a special perspective.",
     },
-    textSection: {
-      maxWidth: "480px",
+    {
+      id: 3,
+      title: "Comfort & Luxury Facilities",
+      image: "/a03.jpg",
+      category: "Relax in Comfort",
+      description:
+        "Enjoy a comfortable and welcoming stay with thoughtfully designed spaces and warm hospitality throughout your visit.",
     },
-    heading: {
-      fontSize: "36px",
-      color: "#cfa35a",
-      marginBottom: "15px",
-    },
-    paragraph: {
-      fontSize: "18px",
-      lineHeight: "1.6",
-      color: "#eae4e4ff",
-    }
-  };
+  ];
 
   return (
-    <div>
-    <div style={styles.container}>
+    <div className="advantage-page">
 
-    </div>
+      {/* HERO SECTION */}
+      <section className="advantage-hero">
+        <div className="advantage-hero-content">
+          <span>THE DIFFERENCE OF PARADISE</span>
 
-      <div style={styles.container}>
-        <img src="/a01.jpg" style={styles.image} alt="Camel Ride" />
-        <div style={styles.textSection}>
-          <h2 style={styles.heading}>Heritage & Royal Architecture</h2>
-          <p style={styles.paragraph}>
-            Experience the traditional camel ride during sunset and explore the
-            calm and beauty of the Thar Desert.
+          <h1>Experience the Royal Side of Jaisalmer</h1>
+
+          <div className="advantage-divider"></div>
+
+          <p>
+            Discover a perfect blend of heritage, comfort and
+            unforgettable views in the heart of the Golden City.
           </p>
         </div>
-      </div>
+      </section>
 
-            <div style={styles.container}>
-        <img src="/a02.jpg" style={styles.image} alt="Camel Ride" />
-        <div style={styles.textSection}>
-          <h2 style={styles.heading}>Rooftop Views of Jaisalmer Fort</h2>
-          <p style={styles.paragraph}>
-            Experience the traditional camel ride during sunset and explore the
-            calm and beauty of the Thar Desert.
-          </p>
-        </div>
-      </div>
+      {/* INTRODUCTION */}
+      <section className="advantage-intro">
+        <span>WHY CHOOSE HOTEL PARADISE?</span>
 
-            <div style={styles.container}>
-        <img src="/a03.jpg" style={styles.image} alt="Camel Ride" />
-        <div style={styles.textSection}>
-          <h2 style={styles.heading}>Luxury Facilities</h2>
-          <p style={styles.paragraph}>
-            Experience the traditional camel ride during sunset and explore the
-            calm and beauty of the Thar Desert.
+        <h2>More Than Just a Stay</h2>
+
+        <p>
+          Experience the beauty of Rajasthan with warm hospitality,
+          memorable surroundings and the comfort you deserve.
+          Every detail makes your Jaisalmer journey special.
+        </p>
+      </section>
+
+      {/* ADVANTAGE CARDS */}
+      <section className="advantage-list">
+
+        {advantages.map((item, index) => (
+          <article
+            className={`advantage-card ${index % 2 !== 0 ? "reverse" : ""}`}
+            key={item.id}
+          >
+            <div className="advantage-image">
+              <img src={item.image} alt={item.title} />
+              <span className="advantage-number">
+                0{item.id}
+              </span>
+            </div>
+
+            <div className="advantage-content">
+              <span className="advantage-category">
+                {item.category}
+              </span>
+
+              <h2>{item.title}</h2>
+
+              <div className="advantage-line"></div>
+
+              <p>{item.description}</p>
+
+              <a href="/contact" className="advantage-btn">
+                Know More <span>→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+
+      </section>
+
+      {/* FINAL BANNER */}
+      <section className="advantage-banner">
+        <div className="advantage-banner-content">
+          <span>YOUR GOLDEN CITY ESCAPE</span>
+
+          <h2>Make Your Stay Truly Special</h2>
+
+          <p>
+            Experience the warmth of Rajasthani hospitality
+            and create beautiful memories in Jaisalmer.
           </p>
+
+          <a href="/booking" className="advantage-banner-btn">
+            Book Your Stay
+          </a>
         </div>
-      </div>
+      </section>
 
     </div>
   );
 }
 
 export default Advantage;
-
-

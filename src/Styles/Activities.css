@@ -1,0 +1,356 @@
+/* =================================
+   ACTIVITIES PAGE
+   HOTEL PARADISE JAISALMER
+================================= */
+
+.activities-page {
+  width: 100%;
+  overflow: hidden;
+  background: #fffaf2;
+  color: #392719;
+  font-family: "Poppins", Arial, sans-serif;
+
+  --gold: #d5a34b;
+  --dark-gold: #a8792d;
+  --brown: #392719;
+  --cream: #fffaf2;
+}
+
+/* HERO SECTION */
+
+.activities-hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 6%;
+
+  background:
+    linear-gradient(
+      rgba(28, 19, 12, 0.65),
+      rgba(28, 19, 12, 0.72)
+    ),
+    url("/jeep.jpg") center/cover no-repeat;
+
+  position: relative;
+}
+
+.activities-hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(213, 163, 75, 0.65);
+  pointer-events: none;
+}
+
+.activities-hero-content {
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.activities-subtitle {
+  color: #e8c98f;
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.activities-hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: white;
+  margin: 25px 0;
+}
+
+.activities-divider {
+  width: 90px;
+  height: 3px;
+  margin: 0 auto 25px;
+  background: var(--gold);
+}
+
+.activities-hero p {
+  color: #f5ead8;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.activities-hero-btn,
+.activities-banner-btn {
+  display: inline-block;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #e6c17b, #c18b37);
+  color: #302116;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.activities-hero-btn:hover,
+.activities-banner-btn:hover {
+  background: #fffaf2;
+  transform: translateY(-4px);
+}
+
+/* INTRODUCTION */
+
+.activities-intro {
+  max-width: 900px;
+  margin: auto;
+  padding: 95px 25px 70px;
+  text-align: center;
+}
+
+.activities-intro span {
+  color: var(--dark-gold);
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.activities-intro h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 500;
+  margin: 20px 0;
+  color: var(--brown);
+}
+
+.activities-intro p {
+  color: #786650;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ACTIVITIES LIST */
+
+.activities-list {
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px 6% 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+.activity-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eadcc5;
+  box-shadow: 0 12px 35px rgba(57, 39, 25, 0.08);
+  overflow: hidden;
+}
+
+.activity-card.reverse {
+  direction: rtl;
+}
+
+.activity-card.reverse .activity-content {
+  direction: ltr;
+}
+
+.activity-image {
+  height: 390px;
+  position: relative;
+  overflow: hidden;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.activity-card:hover .activity-image img {
+  transform: scale(1.07);
+}
+
+.activity-number {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+.activity-content {
+  padding: 45px;
+}
+
+.activity-category {
+  color: var(--dark-gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.activity-content h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 3vw, 39px);
+  font-weight: 500;
+  margin: 18px 0;
+  color: var(--brown);
+}
+
+.activity-line {
+  width: 65px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 22px;
+}
+
+.activity-content p {
+  color: #786c5e;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.activity-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--dark-gold);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 8px;
+  transition: 0.3s ease;
+}
+
+.activity-btn:hover {
+  color: var(--brown);
+  gap: 22px;
+}
+
+/* BOTTOM BANNER */
+
+.activities-banner {
+  padding: 90px 20px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(35, 23, 14, 0.83), rgba(35, 23, 14, 0.83)),
+    url("/dance.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.activities-banner-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.activities-banner-content > span {
+  color: #e8c98f;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.activities-banner h2 {
+  color: white;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  margin: 22px 0;
+}
+
+.activities-banner p {
+  color: #f1e6d5;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+  .activity-card {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-card.reverse {
+    direction: ltr;
+  }
+
+  .activity-image {
+    height: 350px;
+  }
+
+  .activity-content {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .activities-hero {
+    min-height: 480px;
+    padding: 65px 25px;
+  }
+
+  .activities-hero::before {
+    inset: 10px;
+  }
+
+  .activities-subtitle {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .activities-hero p {
+    font-size: 14px;
+  }
+
+  .activities-intro {
+    padding: 65px 22px 45px;
+  }
+
+  .activities-intro p {
+    font-size: 14px;
+  }
+
+  .activities-list {
+    padding: 15px 18px 65px;
+    gap: 35px;
+  }
+
+  .activity-image {
+    height: 250px;
+  }
+
+  .activity-content {
+    padding: 27px 23px;
+  }
+
+  .activity-content p {
+    font-size: 14px;
+  }
+
+  .activities-banner {
+    padding: 70px 22px;
+  }
+
+  .activities-banner p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,630 @@
+
+/* =========================================
+   HOTEL PARADISE - HOME PAGE
+   Responsive CSS - No Media Queries
+========================================= */
+
+.home-page {
+  width: 100%;
+  overflow: hidden;
+  color: #33251c;
+  background: #fffaf2;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* COMMON COLOURS */
+.home-page {
+  --gold: #d5a34b;
+  --dark-gold: #a8792d;
+  --brown: #33251c;
+  --cream: #fff8eb;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+/* HERO SECTION */
+
+.home-page .home-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100svh - 100px);
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #33251c;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.2s ease, transform 5s ease;
+}
+
+.hero-background.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(25, 17, 11, 0.85),
+    rgba(25, 17, 11, 0.48),
+    rgba(25, 17, 11, 0.12)
+  );
+}
+
+.home-hero-content {
+  width: min(100%, 850px);
+  padding: clamp(25px, 8vw, 110px);
+  color: white;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  color: #f2c875;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.home-hero-content h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 6vw, 78px);
+  line-height: 1.12;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.home-hero-content h1 span {
+  color: #e8bb69;
+  font-style: italic;
+}
+
+.home-hero-content p {
+  max-width: 570px;
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.8;
+  color: #f0e8dd;
+  margin-bottom: 35px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero-primary-btn,
+.hero-outline-btn {
+  min-height: 48px;
+  padding: 14px clamp(16px, 3vw, 28px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.hero-primary-btn {
+  background: var(--gold);
+  color: #25190e;
+  border: 1px solid var(--gold);
+}
+
+.hero-primary-btn:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--brown);
+  transform: translateY(-3px);
+}
+
+.hero-outline-btn {
+  border: 1px solid white;
+  color: white;
+}
+
+.hero-outline-btn:hover {
+  background: white;
+  color: var(--brown);
+  transform: translateY(-3px);
+}
+
+/* Slider dots */
+
+.hero-dots {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.hero-dots button {
+  width: 10px;
+  height: 10px;
+  min-height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.hero-dots button.active {
+  width: 28px;
+  border-radius: 0;
+  background: var(--gold);
+}
+
+.hero-bottom-text {
+  position: absolute;
+  right: clamp(15px, 5vw, 60px);
+  bottom: 35px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   COMMON SECTION HEADING
+========================================= */
+
+.section-heading {
+  max-width: 750px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.section-label {
+  display: inline-block;
+  color: var(--dark-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 15px;
+}
+
+.section-heading h2,
+.welcome-content h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 span,
+.welcome-content h2 span {
+  color: var(--dark-gold);
+  font-style: italic;
+}
+
+.section-heading p {
+  max-width: 620px;
+  margin: auto;
+  color: #76685b;
+  line-height: 1.8;
+}
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.welcome-section {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 300px), 1fr)
+  );
+  align-items: center;
+  gap: clamp(30px, 6vw, 85px);
+  padding: clamp(55px, 9vw, 110px) clamp(18px, 8vw, 110px);
+}
+
+.welcome-image {
+  position: relative;
+  width: 100%;
+}
+
+.welcome-image img {
+  width: 100%;
+  height: clamp(280px, 40vw, 510px);
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  background: rgba(30, 20, 12, 0.7);
+  font-family: Georgia, serif;
+  font-size: clamp(14px, 2vw, 20px);
+}
+
+.welcome-content {
+  width: 100%;
+}
+
+.welcome-content p {
+  color: #74685d;
+  margin-bottom: 18px;
+  line-height: 1.9;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--dark-gold);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 6px;
+  transition: 0.3s ease;
+}
+
+.text-link:hover {
+  color: var(--brown);
+}
+
+/* =========================================
+   ACCOMMODATION SECTION
+========================================= */
+
+.accommodation-section {
+  padding: clamp(55px, 8vw, 100px) clamp(18px, 7vw, 90px);
+  background: #f5eddf;
+}
+
+.stay-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 1fr)
+  );
+  gap: clamp(18px, 3vw, 30px);
+}
+
+.stay-card {
+  position: relative;
+  width: 100%;
+  height: clamp(300px, 38vw, 450px);
+  overflow: hidden;
+  background: #33251c;
+}
+
+.stay-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.stay-card:hover img {
+  transform: scale(1.08);
+}
+
+.stay-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 12, 7, 0.9),
+    rgba(20, 12, 7, 0.05)
+  );
+}
+
+.stay-card-content {
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
+  left: 25px;
+  right: 20px;
+  color: white;
+}
+
+.stay-card-content span {
+  color: #efc777;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.stay-card-content h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(21px, 2.5vw, 30px);
+  margin: 12px 0;
+}
+
+.stay-card-content a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 5px;
+}
+
+.center-button {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.gold-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 28px;
+  background: var(--gold);
+  color: #24180e;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.gold-button:hover {
+  background: var(--brown);
+  color: white;
+}
+
+/* =========================================
+   FACILITIES SECTION
+========================================= */
+
+.facilities-section {
+  padding: clamp(55px, 8vw, 100px) clamp(18px, 7vw, 90px);
+  background: #fffaf2;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 240px), 1fr)
+  );
+  gap: clamp(15px, 2.5vw, 25px);
+}
+
+.facility-card {
+  position: relative;
+  height: clamp(260px, 32vw, 390px);
+  overflow: hidden;
+  display: block;
+  color: white;
+  text-decoration: none;
+  background: var(--brown);
+}
+
+.facility-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.facility-card:hover img {
+  transform: scale(1.1);
+}
+
+.facility-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(22, 13, 8, 0.85),
+    transparent 75%
+  );
+}
+
+.facility-overlay {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  left: 25px;
+}
+
+.facility-overlay h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(21px, 2.5vw, 30px);
+  margin-bottom: 10px;
+}
+
+.facility-overlay span {
+  color: #f1c776;
+  font-size: 13px;
+}
+
+/* =========================================
+   JAISALMER EXPERIENCE
+========================================= */
+
+.experience-section {
+  position: relative;
+  min-height: clamp(400px, 65vh, 650px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(50px, 8vw, 100px) 20px;
+  color: white;
+  background:
+    url("/image03.jpg") center / cover no-repeat;
+  isolation: isolate;
+}
+
+.experience-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(30, 19, 10, 0.7);
+}
+
+.experience-content {
+  width: min(100%, 750px);
+}
+
+.experience-content .section-label {
+  color: #f0c474;
+}
+
+.experience-content h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 5.5vw, 65px);
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.experience-content h2 span {
+  color: #efc474;
+  font-style: italic;
+}
+
+.experience-content p {
+  max-width: 580px;
+  margin: 0 auto 30px;
+  color: #eee5da;
+}
+
+/* =========================================
+   EVENTS SECTION
+========================================= */
+
+.events-section {
+  padding: clamp(55px, 8vw, 100px) clamp(18px, 7vw, 90px);
+  background: #f5eddf;
+}
+
+.event-content {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 1fr)
+  );
+  align-items: center;
+  gap: clamp(25px, 5vw, 65px);
+}
+
+.event-content img {
+  width: 100%;
+  height: clamp(250px, 35vw, 400px);
+  object-fit: cover;
+}
+
+.event-content h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3vw, 38px);
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.event-content p {
+  color: #76685b;
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   FINAL BOOKING SECTION
+========================================= */
+
+.booking-section {
+  text-align: center;
+  padding: clamp(60px, 9vw, 110px) 20px;
+  background: #33251c;
+  color: white;
+}
+
+.booking-section > span {
+  display: inline-block;
+  color: #e8bb69;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.booking-section h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 5vw, 62px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.booking-section p {
+  max-width: 550px;
+  margin: 0 auto 30px;
+  color: #e5d9ca;
+}
+
+.booking-cta-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  background: var(--gold);
+  color: #24180e;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.booking-cta-btn:hover {
+  background: white;
+  transform: translateY(-3px);
+  color: var(--brown);
+}
+
+/* =========================================
+   ACCESSIBILITY & SMALL SCREEN SAFETY
+========================================= */
+
+.home-page a:focus-visible,
+.home-page button:focus-visible {
+  outline: 3px solid #d5a34b;
+  outline-offset: 4px;
+}
+
+.home-page a,
+.home-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page *,
+  .home-page *::before,
+  .home-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

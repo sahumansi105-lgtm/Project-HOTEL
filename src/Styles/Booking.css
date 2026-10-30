@@ -1,41 +1,318 @@
+
+/* ==========================================
+   HOTEL PARADISE PALACE
+   LUXURY BOOKING PAGE
+========================================== */
+
 .booking-section {
-  padding: 50px 40px;
+  --gold: #d6aa62;
+  --gold-dark: #a87935;
+  --brown: #392719;
+  --cream: #fffaf1;
+  --muted: #8a7967;
+
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  padding: 85px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(35, 24, 15, 0.78),
+      rgba(55, 37, 22, 0.62)
+    ),
+    url("/room10.jpg") center/cover no-repeat;
+
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Decorative background glow */
+
+.booking-section::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: -130px;
+  right: -100px;
+  border: 1px solid rgba(214, 170, 98, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.booking-section::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  bottom: -120px;
+  left: -100px;
+  border: 1px solid rgba(214, 170, 98, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.booking-header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
   text-align: center;
+  margin-bottom: 38px;
 }
 
 .booking-heading {
-  font-size: 36px;
-  color: #cfa35a;
-  margin-bottom: 20px;
+  color: #fff5e3;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5vw, 55px);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0 0 18px;
 }
+
+.booking-heading::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  margin: 20px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+}
+
+.booking-subheading {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #f1e5d3;
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+/* ==========================================
+   BOOKING FORM CARD
+========================================== */
 
 .booking-form {
-  max-width: 500px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  padding: 42px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  background: rgba(255, 250, 241, 0.97);
+  border: 1px solid rgba(214, 170, 98, 0.7);
+  border-radius: 14px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.3),
+    0 0 0 7px rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(12px);
+}
+
+/* ==========================================
+   INPUT FIELDS
+========================================== */
+
+.booking-field {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  min-width: 0;
 }
 
-.booking-form input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.booking-field label {
+  color: var(--brown);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
+
+.booking-field input {
+  width: 100%;
+  height: 54px;
+  padding: 0 15px;
+
+  color: var(--brown);
+  background: #fffefa;
+
+  border: 1px solid #e5d8c5;
+  border-radius: 7px;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.booking-field input::placeholder {
+  color: #a99b89;
+}
+
+.booking-field input:hover {
+  border-color: #c8a36a;
+}
+
+.booking-field input:focus {
+  border-color: var(--gold-dark);
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(214, 170, 98, 0.15);
+}
+
+/* Date picker */
+
+.booking-field input[type="date"] {
+  cursor: pointer;
+}
+
+/* Number input */
+
+.booking-field input[type="number"] {
+  cursor: pointer;
+}
+
+/* ==========================================
+   BOOK NOW BUTTON
+========================================== */
 
 .booking-button {
-  padding: 12px;
-  font-size: 18px;
-  background-color: #cfa35a;
-  color: #fff;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 56px;
+  margin-top: 8px;
+
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
+
+  background: linear-gradient(
+    135deg,
+    #e3bd78,
+    #bd8b42,
+    #9d6e2d
+  );
+
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
   cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+
+  box-shadow: 0 7px 18px rgba(168, 121, 53, 0.25);
+
+  transition: all 0.35s ease;
 }
 
 .booking-button:hover {
-  background-color: #b88c4c;
+  background: linear-gradient(
+    135deg,
+    #49301e,
+    #2f2015
+  );
+
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(57, 39, 25, 0.25);
+}
+
+.booking-button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 768px) {
+  .booking-section {
+    min-height: auto;
+    padding: 70px 5%;
+  }
+
+  .booking-header {
+    margin-bottom: 30px;
+  }
+
+  .booking-form {
+    max-width: 650px;
+    padding: 32px;
+    gap: 20px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 550px) {
+  .booking-section {
+    padding: 55px 18px;
+  }
+
+  .booking-heading {
+    font-size: 35px;
+  }
+
+  .booking-subheading {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+    padding: 26px 20px;
+    gap: 19px;
+    border-radius: 11px;
+  }
+
+  .booking-field label {
+    font-size: 13px;
+  }
+
+  .booking-field input {
+    height: 50px;
+    font-size: 13px;
+  }
+
+  .booking-button {
+    height: 52px;
+    font-size: 15px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .booking-section {
+    padding: 40px 13px;
+  }
+
+  .booking-heading {
+    font-size: 30px;
+  }
+
+  .booking-form {
+    padding: 22px 15px;
+  }
 }

@@ -1,33 +1,53 @@
-import { Link } from 'react-router-dom'
-import '../Styles/NavigationBar.css'
+import { Link } from 'react-router-dom';
+import '../Styles/NavigationBar.css';
 
 function Navigation() {
   return (
     <nav className="navbar">
+
+      {/* LOGO */}
       <div className="logo">
         <Link to="/">
-          <img src="/logo.jpg" width="150" height="90" alt="Hotel logo" />
+          <img
+            src="/logo.png"
+            alt="Hotel Paradise Jaisalmer"
+          />
         </Link>
       </div>
 
+      {/* NAVIGATION LINKS */}
       <div className="nav-links">
+
         <Link to="/">Home</Link>
-        <Link to="/Acommodation">Acommodation</Link>
+
+        <Link to="/accommodation">Accommodation</Link>
+
+        {/* FACILITIES DROPDOWN */}
         <div className="dropdown">
-          <span className="dropbtn">Facilities ▾</span>
+          <span className="dropbtn">
+            Facilities <span>▾</span>
+          </span>
+
           <div className="dropdown-content">
-            <Link to="/Facilities/Activities">Activities</Link>
-            <Link to="/Facilities/Advantage">Advantage</Link>
-            <Link to="/Facilities/Spa">Spa</Link>
-            <Link to="/Facilities/View">View</Link>
+            <Link to="/facilities/activities">Activities</Link>
+            <Link to="/facilities/spa">Spa</Link>
+            <Link to="/facilities/view">Desert View</Link>
+            <Link to="/facilities/advantage">Our Advantages</Link>
           </div>
         </div>
-        <Link to="/Events">Events</Link>
-        <Link to="/Contact">Contact</Link>
-        <Link to="/booking"><button>Book Now</button></Link>
+
+        <Link to="/events">Events</Link>
+
+        <Link to="/contact">Contact</Link>
+
+        {/* BOOK NOW BUTTON */}
+        <Link to="/booking" className="book-btn">
+          Book Now
+        </Link>
+
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navigation
+export default Navigation;

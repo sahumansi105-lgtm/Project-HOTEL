@@ -1,0 +1,392 @@
+
+/* ==========================================
+   HOTEL PARADISE PALACE
+   EVENTS PAGE
+========================================== */
+
+.events-page {
+  --gold: #d5a34b;
+  --dark-gold: #a87932;
+  --brown: #49301e;
+  --cream: #fffaf1;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.events-hero {
+  position: relative;
+  width: 100%;
+  min-height: 470px;
+
+  background:
+    linear-gradient(
+      rgba(30, 20, 12, 0.55),
+      rgba(30, 20, 12, 0.68)
+    ),
+    url("/e1.jpg") center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.events-hero-overlay {
+  max-width: 850px;
+  padding: 40px 25px;
+  color: white;
+}
+
+.events-tagline {
+  color: #f1cb86;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.events-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 500;
+  margin: 22px 0;
+  color: #fff8eb;
+}
+
+.events-divider {
+  width: 90px;
+  height: 3px;
+  margin: 0 auto 22px;
+  background: var(--gold);
+}
+
+.events-hero p {
+  max-width: 680px;
+  margin: auto;
+  color: #f5eadd;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   INTRO SECTION
+========================================== */
+
+.events-intro {
+  max-width: 850px;
+  margin: auto;
+  padding: 85px 25px 55px;
+  text-align: center;
+}
+
+.events-small-heading {
+  color: var(--dark-gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.events-intro h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 500;
+  color: var(--brown);
+  margin: 18px 0;
+}
+
+.events-intro p {
+  color: #806b55;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   EVENT CARDS
+========================================== */
+
+.events-container {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 25px 5% 90px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px;
+}
+
+/* CARD */
+
+.event-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  border: 1px solid #eadcc5;
+  box-shadow: 0 8px 25px rgba(73, 48, 30, 0.08);
+
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(73, 48, 30, 0.16);
+}
+
+/* IMAGE */
+
+.event-image {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: #e8d8c0;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.6s ease;
+}
+
+.event-card:hover .event-image img {
+  transform: scale(1.07);
+}
+
+/* CATEGORY */
+
+.event-category {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+
+  padding: 9px 15px;
+  background: rgba(57, 39, 25, 0.9);
+  color: #f4d69f;
+
+  border: 1px solid rgba(213, 163, 75, 0.6);
+  border-radius: 4px;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+
+/* CARD CONTENT */
+
+.event-content {
+  padding: 25px 27px 30px;
+}
+
+.event-content h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--brown);
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+.event-content p {
+  color: #806b55;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   BOTTOM BANNER
+========================================== */
+
+.events-banner {
+  position: relative;
+  padding: 85px 25px;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(48, 32, 20, 0.9),
+      rgba(48, 32, 20, 0.94)
+    ),
+    url("/e02.jpg") center/cover no-repeat;
+}
+
+.events-banner-content {
+  max-width: 750px;
+  margin: auto;
+}
+
+.events-banner-content span {
+  color: #e3bd78;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.events-banner h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 500;
+  color: #fff6e8;
+  margin: 20px 0;
+}
+
+.events-banner p {
+  color: #e5d7c5;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+/* CONTACT BUTTON */
+
+.events-contact-btn {
+  display: inline-block;
+  padding: 14px 35px;
+
+  background: linear-gradient(
+    135deg,
+    #d5a34b,
+    #a87932
+  );
+
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  transition: all 0.3s ease;
+}
+
+.events-contact-btn:hover {
+  background: #fffaf1;
+  color: var(--brown);
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .events-hero {
+    min-height: 400px;
+  }
+
+  .events-container {
+    gap: 25px;
+  }
+
+  .event-image {
+    height: 260px;
+  }
+
+  .event-content {
+    padding: 22px;
+  }
+
+  .event-content h3 {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .events-hero {
+    min-height: 380px;
+  }
+
+  .events-hero-overlay {
+    padding: 35px 20px;
+  }
+
+  .events-tagline {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .events-hero h1 {
+    font-size: 39px;
+  }
+
+  .events-hero p {
+    font-size: 14px;
+  }
+
+  .events-intro {
+    padding: 60px 22px 35px;
+  }
+
+  .events-intro h2 {
+    font-size: 30px;
+  }
+
+  .events-intro p {
+    font-size: 14px;
+  }
+
+  .events-container {
+    grid-template-columns: 1fr;
+    padding: 20px 18px 60px;
+    gap: 25px;
+  }
+
+  .event-image {
+    height: 240px;
+  }
+
+  .event-content {
+    padding: 22px 20px;
+  }
+
+  .event-content h3 {
+    font-size: 22px;
+  }
+
+  .event-content p {
+    font-size: 13px;
+  }
+
+  .events-banner {
+    padding: 65px 22px;
+  }
+
+  .events-banner h2 {
+    font-size: 31px;
+  }
+
+  .events-banner p {
+    font-size: 14px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .events-hero h1 {
+    font-size: 32px;
+  }
+
+  .event-image {
+    height: 210px;
+  }
+
+  .events-contact-btn {
+    width: 100%;
+  }
+}
