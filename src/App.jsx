@@ -15,6 +15,7 @@ import Advantage from './Page1/Advantage';
 import Spa from './Page1/Spa';
 import View from './Page1/View';
 import ScrollToTop from './Component/ScrollToTop';
+import Footer from './Component/Footer';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/booking" element={<Booking />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }
